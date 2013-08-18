@@ -1,5 +1,5 @@
 describe('pager directive with default configuration', function () {
-  var $rootScope, element;
+  var $compile, $rootScope, element;
   beforeEach(module('ui.bootstrap.pagination'));
   beforeEach(module('template/pagination/pager.html'));
   beforeEach(inject(function(_$compile_, _$rootScope_) {
@@ -10,10 +10,6 @@ describe('pager directive with default configuration', function () {
     element = $compile('<pager num-pages="numPages" current-page="currentPage"></pager>')($rootScope);
     $rootScope.$digest();
   }));
-
-  it('has a "pager" css class', function() {
-    expect(element.hasClass('pager')).toBe(true);
-  });
 
   it('contains 2 li elements', function() {
     expect(element.find('li').length).toBe(2);
@@ -116,7 +112,7 @@ describe('pager directive with default configuration', function () {
 });
 
 describe('setting pagerConfig', function() {
-  var $rootScope, element;
+  var $compile, $rootScope, element;
   var originalConfig = {};
   beforeEach(module('ui.bootstrap.pagination'));
   beforeEach(module('template/pagination/pager.html'));
@@ -154,7 +150,7 @@ describe('setting pagerConfig', function() {
 });
 
 describe('pager bypass configuration from attributes', function () {
-  var $rootScope, element;
+  var $compile, $rootScope, element;
   beforeEach(module('ui.bootstrap.pagination'));
   beforeEach(module('template/pagination/pager.html'));
   beforeEach(inject(function(_$compile_, _$rootScope_) {
