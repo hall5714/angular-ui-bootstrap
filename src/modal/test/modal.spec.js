@@ -153,7 +153,7 @@ describe('$modal', function () {
       var modal = open({template: '<div>Content</div>'});
       expect($document).toHaveModalsOpen(1);
 
-      $document.find('body > div.modal-backdrop').click();
+      $document.find('body > div.modal').click();
       $rootScope.$digest();
 
       expect($document).toHaveModalsOpen(0);
